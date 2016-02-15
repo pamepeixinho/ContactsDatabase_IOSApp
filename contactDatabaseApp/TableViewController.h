@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TableViewController.h
 //  contactDatabaseApp
 //
 //  Created by Pamela Iupi Peixinho on 2/15/16.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface TableViewController : UITableViewController
 
+@property (strong) NSMutableArray *contacts;
 
 @end
-

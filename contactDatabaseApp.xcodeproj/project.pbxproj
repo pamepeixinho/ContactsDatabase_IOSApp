@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		4E7FFEFD1C72025D006F1724 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFEFC1C72025D006F1724 /* main.m */; };
 		4E7FFF001C72025D006F1724 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFEFF1C72025D006F1724 /* AppDelegate.m */; };
-		4E7FFF031C72025D006F1724 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF021C72025D006F1724 /* ViewController.m */; };
 		4E7FFF061C72025D006F1724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FFF041C72025D006F1724 /* Main.storyboard */; };
 		4E7FFF091C72025D006F1724 /* contactDatabaseApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF071C72025D006F1724 /* contactDatabaseApp.xcdatamodeld */; };
 		4E7FFF0B1C72025D006F1724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FFF0A1C72025D006F1724 /* Assets.xcassets */; };
 		4E7FFF0E1C72025D006F1724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FFF0C1C72025D006F1724 /* LaunchScreen.storyboard */; };
 		4E7FFF191C72025E006F1724 /* contactDatabaseAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF181C72025E006F1724 /* contactDatabaseAppTests.m */; };
 		4E7FFF241C72025E006F1724 /* contactDatabaseAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF231C72025E006F1724 /* contactDatabaseAppUITests.m */; };
+		4E7FFF321C720357006F1724 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FFF311C720357006F1724 /* CoreData.framework */; };
+		4E7FFF381C7203B6006F1724 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF371C7203B6006F1724 /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +41,6 @@
 		4E7FFEFC1C72025D006F1724 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E7FFEFE1C72025D006F1724 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E7FFEFF1C72025D006F1724 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4E7FFF011C72025D006F1724 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4E7FFF021C72025D006F1724 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4E7FFF051C72025D006F1724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E7FFF081C72025D006F1724 /* contactDatabaseApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = contactDatabaseApp.xcdatamodel; sourceTree = "<group>"; };
 		4E7FFF0A1C72025D006F1724 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +52,9 @@
 		4E7FFF1F1C72025E006F1724 /* contactDatabaseAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = contactDatabaseAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7FFF231C72025E006F1724 /* contactDatabaseAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = contactDatabaseAppUITests.m; sourceTree = "<group>"; };
 		4E7FFF251C72025E006F1724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E7FFF311C720357006F1724 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4E7FFF361C7203B6006F1724 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		4E7FFF371C7203B6006F1724 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7FFF321C720357006F1724 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +86,7 @@
 		4E7FFEEF1C72025D006F1724 = {
 			isa = PBXGroup;
 			children = (
+				4E7FFF311C720357006F1724 /* CoreData.framework */,
 				4E7FFEFA1C72025D006F1724 /* contactDatabaseApp */,
 				4E7FFF171C72025D006F1724 /* contactDatabaseAppTests */,
 				4E7FFF221C72025E006F1724 /* contactDatabaseAppUITests */,
@@ -103,13 +107,10 @@
 		4E7FFEFA1C72025D006F1724 /* contactDatabaseApp */ = {
 			isa = PBXGroup;
 			children = (
-				4E7FFEFE1C72025D006F1724 /* AppDelegate.h */,
-				4E7FFEFF1C72025D006F1724 /* AppDelegate.m */,
-				4E7FFF011C72025D006F1724 /* ViewController.h */,
-				4E7FFF021C72025D006F1724 /* ViewController.m */,
-				4E7FFF041C72025D006F1724 /* Main.storyboard */,
+				4E7FFF331C720384006F1724 /* AppDelegate */,
+				4E7FFF351C720397006F1724 /* ViewController */,
+				4E7FFF341C72038D006F1724 /* Storyboard */,
 				4E7FFF0A1C72025D006F1724 /* Assets.xcassets */,
-				4E7FFF0C1C72025D006F1724 /* LaunchScreen.storyboard */,
 				4E7FFF0F1C72025D006F1724 /* Info.plist */,
 				4E7FFF071C72025D006F1724 /* contactDatabaseApp.xcdatamodeld */,
 				4E7FFEFB1C72025D006F1724 /* Supporting Files */,
@@ -141,6 +142,33 @@
 				4E7FFF251C72025E006F1724 /* Info.plist */,
 			);
 			path = contactDatabaseAppUITests;
+			sourceTree = "<group>";
+		};
+		4E7FFF331C720384006F1724 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4E7FFEFE1C72025D006F1724 /* AppDelegate.h */,
+				4E7FFEFF1C72025D006F1724 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		4E7FFF341C72038D006F1724 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4E7FFF041C72025D006F1724 /* Main.storyboard */,
+				4E7FFF0C1C72025D006F1724 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		4E7FFF351C720397006F1724 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4E7FFF361C7203B6006F1724 /* TableViewController.h */,
+				4E7FFF371C7203B6006F1724 /* TableViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,10 +304,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E7FFF031C72025D006F1724 /* ViewController.m in Sources */,
 				4E7FFF091C72025D006F1724 /* contactDatabaseApp.xcdatamodeld in Sources */,
 				4E7FFF001C72025D006F1724 /* AppDelegate.m in Sources */,
 				4E7FFEFD1C72025D006F1724 /* main.m in Sources */,
+				4E7FFF381C7203B6006F1724 /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
