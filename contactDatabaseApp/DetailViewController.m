@@ -31,6 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [_callBnt.layer setCornerRadius:7.5f];
+    [_smsBnt.layer setCornerRadius:7.5f];
+    [_mailBnt.layer setCornerRadius:7.5f];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
