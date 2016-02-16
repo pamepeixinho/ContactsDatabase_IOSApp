@@ -31,6 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(void) viewWillAppear:(BOOL)animated{
     if (self.contact) {
         _nomeText.text = [NSString stringWithFormat:@"%@", [contact valueForKey:@"name"]];
         _telText.text = [NSString stringWithFormat:@"%@", [contact valueForKey:@"phoneNumber"]];
@@ -62,11 +65,70 @@
 }
 
 -(IBAction)sendSMS:(id)sender{
+    MFMessageComposeViewController *TextCompose = [[MFMessageComposeViewController alloc] init];
+    [TextCompose setMessageComposeDelegate:self];
     
+    if([MFMessageComposeViewController canSendText]){
+        [TextCompose setRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", _telText.text], nil]];
+        [TextCompose setBody:[NSString stringWithFormat:@"Hey"]];
+        [self presentViewController:TextCompose animated:YES completion:NULL];
+    }else{
+        NSLog(@"Cant send sms");
+    }
+}
+
+-(void) messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+     switch (result) {
+         case MessageComposeResultCancelled:
+              NSLog(@"Cancelled");
+              break;
+         case MessageComposeResultFailed:
+              NSLog(@"Failed");
+              break;
+         case MessageComposeResultSent:
+              NSLog(@"Sent");
+              break;
+    
+         default:
+              break;
+        }
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 -(IBAction)sendMail:(id)sender{
+    MFMailComposeViewController *TextCompose = [[MFMailComposeViewController alloc] init];
+    //    [TextCompose setMessageComposeDelegate:self];
+    [TextCompose setMailComposeDelegate:self];
     
+    if ([MFMailComposeViewController canSendMail]) {
+        [TextCompose setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", _emailText.text], nil]];
+//        [TextCompose setSubject:[NSString stringWithFormat:@""];
+        [TextCompose setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [self presentViewController:TextCompose animated:YES completion:NULL];
+        //        NSData *image = UIImageJPEGRepresentation(self.imageView.image, 1);
+        //        [TextCompose addAttachmentData:image typeIdentifier:@"image/jpeg" filename:@"Nina5.jpg"];
+        [self presentViewController:TextCompose animated:YES completion:NULL];
+    }else{
+        NSLog(@"Cant send mail");
+    }
+}
+
+-(void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+        switch (result) {
+            case MFMailComposeResultCancelled:
+                NSLog(@"Cancelled");
+                break;
+            case MFMailComposeResultFailed:
+                NSLog(@"Failed");
+                break;
+            case MFMailComposeResultSent:
+                NSLog(@"Sent");
+                break;
+    
+            default:
+                break;
+        }
+        [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

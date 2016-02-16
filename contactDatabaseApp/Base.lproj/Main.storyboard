@@ -217,20 +217,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tv-KK-uUp">
-                                <rect key="frame" x="16" y="492" width="292" height="30"/>
-                                <state key="normal" title="Enviar Email"/>
-                                <connections>
-                                    <action selector="sendMail:" destination="LPk-ql-5OT" eventType="touchUpInside" id="Z3C-RD-PTK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vND-ot-KFV">
-                                <rect key="frame" x="16" y="454" width="292" height="30"/>
-                                <state key="normal" title="Ligar para Contato"/>
-                                <connections>
-                                    <action selector="callContact:" destination="LPk-ql-5OT" eventType="touchUpInside" id="bxv-pH-olW"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-oN-KSx">
                                 <rect key="frame" x="16" y="134" width="292" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -261,11 +247,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vND-ot-KFV">
+                                <rect key="frame" x="12" y="368" width="300" height="30"/>
+                                <state key="normal" title="Ligar para Contato"/>
+                                <connections>
+                                    <action selector="callContact:" destination="LPk-ql-5OT" eventType="touchUpInside" id="bxv-pH-olW"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ps-VT-f2b">
-                                <rect key="frame" x="16" y="530" width="292" height="30"/>
+                                <rect key="frame" x="12" y="444" width="300" height="30"/>
                                 <state key="normal" title="Enviar SMS"/>
                                 <connections>
                                     <action selector="sendSMS:" destination="LPk-ql-5OT" eventType="touchUpInside" id="Kk6-Lw-8Xr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tv-KK-uUp">
+                                <rect key="frame" x="12" y="406" width="300" height="30"/>
+                                <state key="normal" title="Enviar Email"/>
+                                <connections>
+                                    <action selector="sendMail:" destination="LPk-ql-5OT" eventType="touchUpInside" id="odf-2O-cKx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -273,27 +273,31 @@
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="sHb-1L-2sh" secondAttribute="leading" id="0Er-vw-53K"/>
                             <constraint firstItem="Xs9-oN-KSx" firstAttribute="top" secondItem="sHb-1L-2sh" secondAttribute="bottom" constant="13" id="1vI-IX-5YU"/>
+                            <constraint firstItem="2tv-KK-uUp" firstAttribute="leading" secondItem="bWk-7t-JfH" secondAttribute="leadingMargin" constant="-4" id="2Ta-6l-SjQ"/>
+                            <constraint firstItem="vND-ot-KFV" firstAttribute="width" secondItem="2tv-KK-uUp" secondAttribute="width" id="3be-dg-KNA"/>
                             <constraint firstAttribute="leadingMargin" secondItem="LYo-cD-FbS" secondAttribute="leading" id="4R4-Sk-aDL"/>
                             <constraint firstItem="abS-P1-trC" firstAttribute="top" secondItem="LYo-cD-FbS" secondAttribute="bottom" constant="8" id="6nR-o3-shQ"/>
-                            <constraint firstItem="1Ps-VT-f2b" firstAttribute="top" secondItem="2tv-KK-uUp" secondAttribute="bottom" constant="8" id="ADd-ck-bHo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Ps-VT-f2b" secondAttribute="trailing" constant="-8" id="DZJ-NW-6zC"/>
+                            <constraint firstItem="1Ps-VT-f2b" firstAttribute="top" secondItem="2tv-KK-uUp" secondAttribute="bottom" constant="8" id="FPr-gi-SiQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xs9-oN-KSx" secondAttribute="trailing" constant="-4" id="FzO-U9-XVO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1Ps-VT-f2b" secondAttribute="trailing" constant="-4" id="InS-Fy-myn"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="1Ps-VT-f2b" secondAttribute="leading" id="KEA-7g-HVA"/>
-                            <constraint firstItem="0It-ok-g6k" firstAttribute="top" secondItem="1Ps-VT-f2b" secondAttribute="bottom" constant="8" id="MFs-vY-PnI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2tv-KK-uUp" secondAttribute="trailing" constant="-8" id="Mr4-uq-RM3"/>
+                            <constraint firstItem="vND-ot-KFV" firstAttribute="top" secondItem="odf-Mk-g6K" secondAttribute="bottom" constant="61" id="Nt4-s2-744"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3dn-Qk-Mqh" secondAttribute="trailing" constant="-4" id="Pcs-5g-z8D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sHb-1L-2sh" secondAttribute="trailing" id="RI2-hD-ZFc"/>
                             <constraint firstItem="LYo-cD-FbS" firstAttribute="top" secondItem="auM-7j-r5I" secondAttribute="bottom" constant="13" id="SZH-Mm-06z"/>
                             <constraint firstAttribute="leadingMargin" secondItem="auM-7j-r5I" secondAttribute="leading" id="VvV-8m-zVo"/>
+                            <constraint firstItem="1Ps-VT-f2b" firstAttribute="leading" secondItem="bWk-7t-JfH" secondAttribute="leadingMargin" constant="-4" id="Vz5-Lf-l0X"/>
                             <constraint firstAttribute="leadingMargin" secondItem="3jT-OY-cuF" secondAttribute="leading" id="Vzl-QI-glg"/>
                             <constraint firstAttribute="leadingMargin" secondItem="abS-P1-trC" secondAttribute="leading" id="X4O-hl-jId"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LYo-cD-FbS" secondAttribute="trailing" constant="-4" id="ZuB-hp-5yQ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="3dn-Qk-Mqh" secondAttribute="leading" id="cEf-SP-HUP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2tv-KK-uUp" secondAttribute="trailing" constant="-4" id="f4W-1s-oUb"/>
+                            <constraint firstItem="2tv-KK-uUp" firstAttribute="width" secondItem="1Ps-VT-f2b" secondAttribute="width" id="czD-og-mAo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vND-ot-KFV" secondAttribute="trailing" constant="-8" id="edx-KJ-dfp"/>
+                            <constraint firstItem="vND-ot-KFV" firstAttribute="leading" secondItem="bWk-7t-JfH" secondAttribute="leadingMargin" constant="-4" id="eeq-aN-nfG"/>
                             <constraint firstAttribute="leadingMargin" secondItem="odf-Mk-g6K" secondAttribute="leading" id="fa1-q7-HVk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3jT-OY-cuF" secondAttribute="trailing" constant="-4" id="iDG-7m-M0Y"/>
                             <constraint firstItem="3jT-OY-cuF" firstAttribute="top" secondItem="ZE1-Ue-gED" secondAttribute="bottom" constant="8" id="jxh-ra-r0w"/>
                             <constraint firstItem="sHb-1L-2sh" firstAttribute="top" secondItem="3jT-OY-cuF" secondAttribute="bottom" constant="8" id="lIs-Tc-7uR"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="2tv-KK-uUp" secondAttribute="leading" id="nRf-TE-1z3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="abS-P1-trC" secondAttribute="trailing" id="nUS-T9-31C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="odf-Mk-g6K" secondAttribute="trailing" id="rIb-6U-6M3"/>
                             <constraint firstItem="odf-Mk-g6K" firstAttribute="top" secondItem="3dn-Qk-Mqh" secondAttribute="bottom" constant="8" id="t5Q-bz-QSY"/>
@@ -301,6 +305,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="auM-7j-r5I" secondAttribute="trailing" id="uf0-12-m3c"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Xs9-oN-KSx" secondAttribute="leading" id="ufo-Xd-2vU"/>
                             <constraint firstItem="auM-7j-r5I" firstAttribute="top" secondItem="Xs9-oN-KSx" secondAttribute="bottom" constant="8" id="z0a-kO-EfK"/>
+                            <constraint firstItem="2tv-KK-uUp" firstAttribute="top" secondItem="vND-ot-KFV" secondAttribute="bottom" constant="8" id="zPw-Bf-DYJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YMb-DX-XaM">

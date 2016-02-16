@@ -19,6 +19,7 @@
 		4E7FFF381C7203B6006F1724 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF371C7203B6006F1724 /* TableViewController.m */; };
 		4E7FFF3B1C734581006F1724 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF3A1C734581006F1724 /* AddViewController.m */; };
 		4E7FFF3E1C7346AE006F1724 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF3D1C7346AE006F1724 /* DetailViewController.m */; };
+		4E7FFF401C736196006F1724 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FFF3F1C736196006F1724 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		4E7FFF3A1C734581006F1724 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		4E7FFF3C1C7346AE006F1724 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		4E7FFF3D1C7346AE006F1724 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		4E7FFF3F1C736196006F1724 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7FFF401C736196006F1724 /* MessageUI.framework in Frameworks */,
 				4E7FFF321C720357006F1724 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +95,7 @@
 		4E7FFEEF1C72025D006F1724 = {
 			isa = PBXGroup;
 			children = (
+				4E7FFF3F1C736196006F1724 /* MessageUI.framework */,
 				4E7FFF311C720357006F1724 /* CoreData.framework */,
 				4E7FFEFA1C72025D006F1724 /* contactDatabaseApp */,
 				4E7FFF171C72025D006F1724 /* contactDatabaseAppTests */,
@@ -545,6 +549,7 @@
 				4E7FFF2A1C72025E006F1724 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E7FFF2B1C72025E006F1724 /* Build configuration list for PBXNativeTarget "contactDatabaseAppTests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +558,7 @@
 				4E7FFF2D1C72025E006F1724 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E7FFF2E1C72025E006F1724 /* Build configuration list for PBXNativeTarget "contactDatabaseAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -561,6 +567,7 @@
 				4E7FFF301C72025E006F1724 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
