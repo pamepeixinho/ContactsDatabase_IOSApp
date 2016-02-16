@@ -17,6 +17,8 @@
 		4E7FFF241C72025E006F1724 /* contactDatabaseAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF231C72025E006F1724 /* contactDatabaseAppUITests.m */; };
 		4E7FFF321C720357006F1724 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FFF311C720357006F1724 /* CoreData.framework */; };
 		4E7FFF381C7203B6006F1724 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF371C7203B6006F1724 /* TableViewController.m */; };
+		4E7FFF3B1C734581006F1724 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF3A1C734581006F1724 /* AddViewController.m */; };
+		4E7FFF3E1C7346AE006F1724 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF3D1C7346AE006F1724 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		4E7FFF311C720357006F1724 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4E7FFF361C7203B6006F1724 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		4E7FFF371C7203B6006F1724 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		4E7FFF391C734581006F1724 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		4E7FFF3A1C734581006F1724 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		4E7FFF3C1C7346AE006F1724 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		4E7FFF3D1C7346AE006F1724 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,10 @@
 			children = (
 				4E7FFF361C7203B6006F1724 /* TableViewController.h */,
 				4E7FFF371C7203B6006F1724 /* TableViewController.m */,
+				4E7FFF391C734581006F1724 /* AddViewController.h */,
+				4E7FFF3A1C734581006F1724 /* AddViewController.m */,
+				4E7FFF3C1C7346AE006F1724 /* DetailViewController.h */,
+				4E7FFF3D1C7346AE006F1724 /* DetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -304,10 +314,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7FFF3B1C734581006F1724 /* AddViewController.m in Sources */,
 				4E7FFF091C72025D006F1724 /* contactDatabaseApp.xcdatamodeld in Sources */,
 				4E7FFF001C72025D006F1724 /* AppDelegate.m in Sources */,
 				4E7FFEFD1C72025D006F1724 /* main.m in Sources */,
 				4E7FFF381C7203B6006F1724 /* TableViewController.m in Sources */,
+				4E7FFF3E1C7346AE006F1724 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
