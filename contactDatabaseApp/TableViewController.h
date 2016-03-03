@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchResultsTableViewController.h"
 
-@interface TableViewController : UITableViewController
+@interface TableViewController : UITableViewController <UISearchResultsUpdating> 
 
-@property (strong) NSMutableArray *contacts;
+@property (strong, nonatomic) NSMutableArray *contacts;
+
+@property (strong, nonatomic) UISearchController *searchController;
+@property (strong, nonatomic) NSMutableArray *searchResults;
 
 @end

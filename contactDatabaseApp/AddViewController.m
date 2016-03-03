@@ -33,11 +33,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    [_nomeText setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+    [_telText setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+    [_emailText setAutocapitalizationType:UITextAutocapitalizationTypeNone];
     
     if (self.contact) {
-        _nomeText.text = [NSString stringWithFormat:@"%@", [contact valueForKey:@"name"]];
+        _nomeText.text = [[NSString stringWithFormat:@"%@", [contact valueForKey:@"name"]] capitalizedString];
         _telText.text = [NSString stringWithFormat:@"%@", [contact valueForKey:@"phoneNumber"]];
-        _endText.text = [NSString stringWithFormat:@"%@", [contact valueForKey:@"address"]];
+        _endText.text = [[NSString stringWithFormat:@"%@", [contact valueForKey:@"address"]] capitalizedString];
         _emailText.text = [NSString stringWithFormat:@"%@", [contact valueForKey:@"mail"]];
     }
 }
@@ -66,17 +70,17 @@
     NSManagedObjectContext *context = [self managedObjectContext];
     
     if(self.contact){
-        [contact setValue:_nomeText.text forKey:@"name"];
+        [contact setValue:[_nomeText.text capitalizedString] forKey:@"name"];
         [contact setValue:_telText.text forKey:@"phoneNumber"];
-        [contact setValue:_endText.text forKey:@"address"];
+        [contact setValue:[_endText.text capitalizedString] forKey:@"address"];
         [contact setValue:_emailText.text forKey:@"mail"];
     }
     else{
         NSManagedObject *newContact = [NSEntityDescription insertNewObjectForEntityForName:@"ContactsData" inManagedObjectContext:context];
         
-        [newContact setValue:_nomeText.text forKey:@"name"];
+        [newContact setValue:[_nomeText.text capitalizedString] forKey:@"name"];
         [newContact setValue:_telText.text forKey:@"phoneNumber"];
-        [newContact setValue:_endText.text forKey:@"address"];
+        [newContact setValue:[_endText.text capitalizedString] forKey:@"address"];
         [newContact setValue:_emailText.text forKey:@"mail"];
     }
     

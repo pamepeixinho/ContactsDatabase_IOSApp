@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E7E5F2B1C88923A00F79B20 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E5F2A1C88923A00F79B20 /* SearchResultsTableViewController.m */; };
 		4E7FFEFD1C72025D006F1724 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFEFC1C72025D006F1724 /* main.m */; };
 		4E7FFF001C72025D006F1724 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFEFF1C72025D006F1724 /* AppDelegate.m */; };
 		4E7FFF061C72025D006F1724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FFF041C72025D006F1724 /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E7E5F291C88923A00F79B20 /* SearchResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsTableViewController.h; sourceTree = "<group>"; };
+		4E7E5F2A1C88923A00F79B20 /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
 		4E7FFEF81C72025D006F1724 /* contactDatabaseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contactDatabaseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7FFEFC1C72025D006F1724 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E7FFEFE1C72025D006F1724 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				4E7FFF3A1C734581006F1724 /* AddViewController.m */,
 				4E7FFF3C1C7346AE006F1724 /* DetailViewController.h */,
 				4E7FFF3D1C7346AE006F1724 /* DetailViewController.m */,
+				4E7E5F291C88923A00F79B20 /* SearchResultsTableViewController.h */,
+				4E7E5F2A1C88923A00F79B20 /* SearchResultsTableViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				4E7FFF3B1C734581006F1724 /* AddViewController.m in Sources */,
 				4E7FFF091C72025D006F1724 /* contactDatabaseApp.xcdatamodeld in Sources */,
 				4E7FFF001C72025D006F1724 /* AppDelegate.m in Sources */,
+				4E7E5F2B1C88923A00F79B20 /* SearchResultsTableViewController.m in Sources */,
 				4E7FFEFD1C72025D006F1724 /* main.m in Sources */,
 				4E7FFF381C7203B6006F1724 /* TableViewController.m in Sources */,
 				4E7FFF3E1C7346AE006F1724 /* DetailViewController.m in Sources */,

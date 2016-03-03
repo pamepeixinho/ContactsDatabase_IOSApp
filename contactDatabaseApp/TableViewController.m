@@ -37,7 +37,24 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
 
+// NEW CODE -----------
+    UINavigationController *searchResultsController = [[self storyboard] instantiateViewControllerWithIdentifier:@"TableSearchResultsNavController"];
+    
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultsController];
+    
+    // The searchcontroller's searchResultsUpdater property will contain our tableView.
+    _searchController.searchResultsUpdater = self;
+    
+    // create the searchBar programatically.
+    _searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x,
+                                                   self.searchController.searchBar.frame.origin.y,
+                                                   self.searchController.searchBar.frame.size.width, 40.0);
+   
+    self.tableView.tableHeaderView = _searchController.searchBar;
+// --------------------
+    
 }
 
 // viewDidLoad só executa quando carrega a primeira vez
@@ -135,6 +152,45 @@
         DetailViewController *nextView = [segue destinationViewController];
         [nextView setContact:[_contacts objectAtIndex:[self.tableView indexPathForSelectedRow].row]];
     }
+}
+
+
+#pragma mark - UISearchControllerDelegate & UISearchResultsDelegate
+
+-(void) updateSearchResultsForSearchController:(UISearchController *)searchController{
+    
+    NSString *searchString = _searchController.searchBar.text;
+    [self updateFilteredContentForAirlineName: searchString];
+    
+    if (self.searchController.searchResultsController) {
+        UINavigationController *navController = (UINavigationController *)self.searchController.searchResultsController;
+        
+        SearchResultsTableViewController *vc = (SearchResultsTableViewController *) navController.topViewController;
+        
+        vc.searchResults = self.searchResults;
+        [vc.tableView reloadData];
+    }
+    
+}
+
+-(void) updateFilteredContentForAirlineName:(NSString*)contactName{
+    
+    if (contactName == nil) {
+        _searchResults = [self.contacts mutableCopy];
+    }else{
+        NSMutableArray *searchingResults = [[NSMutableArray alloc] init];
+        
+        for (NSManagedObjectModel *thisContact in self.contacts){
+            
+            if ([[thisContact valueForKey:@"name"] containsString:contactName]) {
+                
+                [searchingResults addObject:thisContact];
+            }
+    
+            self.searchResults = searchingResults;
+        }
+    }
+
 }
 
 
