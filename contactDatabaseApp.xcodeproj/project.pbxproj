@@ -11,6 +11,7 @@
 		4E7E5F301C890C3500F79B20 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E5F2F1C890C3500F79B20 /* BaseTableViewController.m */; };
 		4E7E5F321C89D89500F79B20 /* cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E7E5F311C89D89500F79B20 /* cell.xib */; };
 		4E7E5F341C89D8D300F79B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7E5F331C89D8D300F79B20 /* Main.storyboard */; };
+		4E7E5F361C89EDD800F79B20 /* Contacts-icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E7E5F351C89EDD800F79B20 /* Contacts-icon-2.png */; };
 		4E7FFEFD1C72025D006F1724 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFEFC1C72025D006F1724 /* main.m */; };
 		4E7FFF001C72025D006F1724 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFEFF1C72025D006F1724 /* AppDelegate.m */; };
 		4E7FFF091C72025D006F1724 /* contactDatabaseApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FFF071C72025D006F1724 /* contactDatabaseApp.xcdatamodeld */; };
@@ -49,6 +50,7 @@
 		4E7E5F2F1C890C3500F79B20 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		4E7E5F311C89D89500F79B20 /* cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cell.xib; sourceTree = "<group>"; };
 		4E7E5F331C89D8D300F79B20 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4E7E5F351C89EDD800F79B20 /* Contacts-icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Contacts-icon-2.png"; sourceTree = "<group>"; };
 		4E7FFEF81C72025D006F1724 /* contactDatabaseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contactDatabaseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7FFEFC1C72025D006F1724 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E7FFEFE1C72025D006F1724 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		4E7FFEFB1C72025D006F1724 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4E7E5F351C89EDD800F79B20 /* Contacts-icon-2.png */,
 				4E7FFEFC1C72025D006F1724 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -320,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7E5F361C89EDD800F79B20 /* Contacts-icon-2.png in Resources */,
 				4E7FFF0E1C72025D006F1724 /* LaunchScreen.storyboard in Resources */,
 				4E7E5F321C89D89500F79B20 /* cell.xib in Resources */,
 				4E7FFF0B1C72025D006F1724 /* Assets.xcassets in Resources */,

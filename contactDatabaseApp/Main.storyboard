@@ -185,37 +185,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYo-cD-FbS">
-                                <rect key="frame" x="16" y="198" width="292" height="21.5"/>
+                                <rect key="frame" x="16" y="186" width="292" height="21.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="1" green="0.35046853620000001" blue="0.085376652519999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dn-Qk-Mqh">
-                                <rect key="frame" x="16" y="261" width="292" height="21.5"/>
+                                <rect key="frame" x="16" y="249" width="292" height="21.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="1" green="0.35046853620000001" blue="0.085376652519999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-oN-KSx">
-                                <rect key="frame" x="16" y="135" width="292" height="21.5"/>
+                                <rect key="frame" x="16" y="123" width="292" height="21.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="1" green="0.35046853620000001" blue="0.085376652519999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tel label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auM-7j-r5I">
-                                <rect key="frame" x="16" y="164" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="152" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="end label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abS-P1-trC">
-                                <rect key="frame" x="16" y="227" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="215" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odf-Mk-g6K">
-                                <rect key="frame" x="16" y="290" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="278" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -251,13 +251,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nome label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHb-1L-2sh">
-                                <rect key="frame" x="16" y="101" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="89" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jT-OY-cuF">
-                                <rect key="frame" x="16" y="71" width="292" height="21.5"/>
+                                <rect key="frame" x="16" y="59" width="292" height="21.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="1" green="0.35046853620000001" blue="0.085376652519999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -271,12 +271,12 @@
                             <constraint firstItem="vND-ot-KFV" firstAttribute="width" secondItem="2tv-KK-uUp" secondAttribute="width" id="3be-dg-KNA"/>
                             <constraint firstAttribute="leadingMargin" secondItem="LYo-cD-FbS" secondAttribute="leading" id="4R4-Sk-aDL"/>
                             <constraint firstItem="abS-P1-trC" firstAttribute="top" secondItem="LYo-cD-FbS" secondAttribute="bottom" constant="8" id="6nR-o3-shQ"/>
+                            <constraint firstItem="vND-ot-KFV" firstAttribute="top" secondItem="odf-Mk-g6K" secondAttribute="bottom" constant="73.5" id="96b-fB-Z8W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Ps-VT-f2b" secondAttribute="trailing" constant="-8" id="DZJ-NW-6zC"/>
+                            <constraint firstItem="3jT-OY-cuF" firstAttribute="top" secondItem="ZE1-Ue-gED" secondAttribute="bottom" constant="39" id="Ead-jE-ZBK"/>
                             <constraint firstItem="1Ps-VT-f2b" firstAttribute="top" secondItem="2tv-KK-uUp" secondAttribute="bottom" constant="8" id="FPr-gi-SiQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xs9-oN-KSx" secondAttribute="trailing" constant="-4" id="FzO-U9-XVO"/>
-                            <constraint firstItem="3jT-OY-cuF" firstAttribute="top" secondItem="ZE1-Ue-gED" secondAttribute="bottom" constant="51" id="LTh-7d-ygy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2tv-KK-uUp" secondAttribute="trailing" constant="-8" id="Mr4-uq-RM3"/>
-                            <constraint firstItem="vND-ot-KFV" firstAttribute="top" secondItem="odf-Mk-g6K" secondAttribute="bottom" constant="61" id="Nt4-s2-744"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3dn-Qk-Mqh" secondAttribute="trailing" constant="-4" id="Pcs-5g-z8D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sHb-1L-2sh" secondAttribute="trailing" id="RI2-hD-ZFc"/>
                             <constraint firstItem="LYo-cD-FbS" firstAttribute="top" secondItem="auM-7j-r5I" secondAttribute="bottom" constant="13" id="SZH-Mm-06z"/>
