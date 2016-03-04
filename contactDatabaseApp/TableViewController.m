@@ -7,12 +7,17 @@
 //
 
 #import "TableViewController.h"
-#import "DetailViewController.h"
-#import <CoreData/CoreData.h>
 
-@interface TableViewController ()
+@interface TableViewController () <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
+
+
+@property (nonatomic, strong) UISearchController *searchController;
+
+// our secondary search results table view
+@property (nonatomic, strong) SearchResultsTableViewController *resultsTableController;
 
 @end
+
 
 @implementation TableViewController
 
@@ -38,24 +43,33 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
-
-// NEW CODE -----------
-    UINavigationController *searchResultsController = [[self storyboard] instantiateViewControllerWithIdentifier:@"TableSearchResultsNavController"];
     
-    _searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultsController];
-    
-    // The searchcontroller's searchResultsUpdater property will contain our tableView.
-    _searchController.searchResultsUpdater = self;
-    
-    // create the searchBar programatically.
-    _searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x,
-                                                   self.searchController.searchBar.frame.origin.y,
-                                                   self.searchController.searchBar.frame.size.width, 40.0);
-   
-    self.tableView.tableHeaderView = _searchController.searchBar;
+//----------- old code
+//    UINavigationController *searchResultsController = [[self storyboard] instantiateViewControllerWithIdentifier:@"TableSearchResultsNavController"];
+//    
+//    _searchController = [[UISearchController alloc] initWithSearchResultsController: searchResultsController];
+//    _searchController.searchResultsUpdater = self;
+//    
+//    [self.searchController.searchBar sizeToFit];
+//    self.tableView.tableHeaderView = _searchController.searchBar;
 // --------------------
+
+    _resultsTableController = [[SearchResultsTableViewController alloc] init];
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableController];
+    _searchController.searchResultsUpdater = self;
+    [_searchController.searchBar sizeToFit];
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    
+     // didSelectRowAtIndexPath is called for both tables
+    _resultsTableController.tableView.delegate = self;
+    _searchController.delegate = self;
+    _searchController.dimsBackgroundDuringPresentation = NO;
+    _searchController.searchBar.delegate = self; //can monitor text changes + others
+    self.definesPresentationContext = YES;// know where you want UISearchController to be displayed
+
     
 }
+
 
 // viewDidLoad só executa quando carrega a primeira vez
 // viewWillAppear executa sempre que aparecer
@@ -70,10 +84,13 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
 }
+
+
 
 #pragma mark - Table view data source
 
@@ -89,14 +106,29 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    UITableViewCell *cell = (UITableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     
     NSManagedObjectModel *thisContact = [_contacts objectAtIndex:indexPath.row];
-    // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [thisContact valueForKey:@"name"]];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [thisContact valueForKey:@"mail"]];
-    
+//        NSLog(@"%@", [thisContact valueForKey:@"name"]);
+    [self configureCell:cell forObject:thisContact];
+
     return cell;
+}
+
+// here we are the table view delegate for both our main table and filtered table, so we can
+// push from the current navigation controller (resultsTableController's parent view controller
+// is not this UINavigationController)
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//  identifier which tableview is
+    NSManagedObjectModel *selectedContact = (self.tableView == tableView) ?
+    [_contacts objectAtIndex:indexPath.row] : self.resultsTableController.searchResults[indexPath.row];
+    
+    DetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    [detailViewController setContact:selectedContact];
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
+
 }
 
 
@@ -123,75 +155,65 @@
     }
     [self.contacts removeObjectAtIndex:indexPath.row];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+  
 }
 
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+#pragma mark - UISearchResultsUpdating
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+//------------old code
+//-(void) updateSearchResultsForSearchController:(UISearchController *)searchController{
+//    
+//    NSString *searchString = _searchController.searchBar.text;
+//    [self updateFilteredContentForAirlineName: searchString];
+//    
+//    if (self.searchController.searchResultsController) {
+//        UINavigationController *navController = (UINavigationController *)self.searchController.searchResultsController;
+//        
+//        SearchResultsTableViewController *cv = (SearchResultsTableViewController *) navController.topViewController;
+//        
+//        cv.searchResults = self.searchResults;
+//        cv.tableView.delegate = self;
+//        [cv.tableView reloadData];
+//    }
+//    
+//}
+//------------old code
 
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    // update the filtered array based on the search text
+    NSString *searchText = searchController.searchBar.text;
+    [self updateFilteredContentForAirlineName: searchText];
     
-    if([[segue identifier] isEqualToString:@"showDetail"]){
-        DetailViewController *nextView = [segue destinationViewController];
-        [nextView setContact:[_contacts objectAtIndex:[self.tableView indexPathForSelectedRow].row]];
-    }
-}
-
-
-#pragma mark - UISearchControllerDelegate & UISearchResultsDelegate
-
--(void) updateSearchResultsForSearchController:(UISearchController *)searchController{
+    SearchResultsTableViewController *tableController = (SearchResultsTableViewController*) self.searchController.searchResultsController;
+    tableController.searchResults = self.searchResults;
     
-    NSString *searchString = _searchController.searchBar.text;
-    [self updateFilteredContentForAirlineName: searchString];
-    
-    if (self.searchController.searchResultsController) {
-        UINavigationController *navController = (UINavigationController *)self.searchController.searchResultsController;
-        
-        SearchResultsTableViewController *vc = (SearchResultsTableViewController *) navController.topViewController;
-        
-        vc.searchResults = self.searchResults;
-        [vc.tableView reloadData];
-    }
+    [tableController.tableView reloadData];
     
 }
 
 -(void) updateFilteredContentForAirlineName:(NSString*)contactName{
     
-    if (contactName == nil) {
-        _searchResults = [self.contacts mutableCopy];
-    }else{
-        NSMutableArray *searchingResults = [[NSMutableArray alloc] init];
-        
-        for (NSManagedObjectModel *thisContact in self.contacts){
-            
-            if ([[thisContact valueForKey:@"name"] containsString:contactName]) {
-                
-                [searchingResults addObject:thisContact];
-            }
+        if (contactName == nil) {
+            _searchResults = [self.contacts mutableCopy];
+        }else{
+            NSMutableArray *searchingResults = [[NSMutableArray alloc] init];
     
-            self.searchResults = searchingResults;
+            for (NSManagedObjectModel *thisContact in self.contacts){
+    
+                if ([[thisContact valueForKey:@"name"] containsString:contactName]) {
+    
+                    [searchingResults addObject:thisContact];
+                }
+    
+                self.searchResults = searchingResults;
+            }
         }
-    }
-
+    
 }
+
+
+
 
 
 @end
