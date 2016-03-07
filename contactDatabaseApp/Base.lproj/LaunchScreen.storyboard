@@ -17,17 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Contacts-icon-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="8d6-h2-UYs">
-                                <rect key="frame" x="83" y="98" width="154" height="146"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contacts-icon-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="8d6-h2-UYs">
+                                <rect key="frame" x="83" y="105" width="154" height="146"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="ENe-Vq-c1Q"/>
+                                    <constraint firstAttribute="height" constant="146" id="Lmu-5G-V9N"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contacts Database" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xc-K3-dJj">
-                                <rect key="frame" x="65" y="264" width="190" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts Database" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xc-K3-dJj">
+                                <rect key="frame" x="75" y="271" width="170.5" height="26.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" red="0.89019607840000003" green="0.4549019608" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.8901960784313725" green="0.45490196078431372" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8d6-h2-UYs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Kwr-ZC-3GN"/>
+                            <constraint firstItem="2xc-K3-dJj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ORe-bt-1DC"/>
+                            <constraint firstItem="2xc-K3-dJj" firstAttribute="top" secondItem="8d6-h2-UYs" secondAttribute="bottom" constant="20" id="se1-Pz-7gG"/>
+                            <constraint firstItem="2xc-K3-dJj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ugD-kp-BNz"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
